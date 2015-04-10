@@ -1,0 +1,2 @@
+# Sentury
+In the not so distant future, we discovered a way to time travel. However due to the state of future, many proposed to change the past to change the future, those were the “Shifters”. Those who opposed to that notion were called the “Senturies”. To prevent the “Shifters” from changing history, the “Senturies” set up bases at historical places. The “Senturies” send spotters who uses time traveling with the VR machine to spot enemies who try to invade them from different eras and take over the generator. That will be your job.
