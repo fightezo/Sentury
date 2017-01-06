@@ -1,0 +1,6 @@
+002.080|Simple isnt it?
+004.368|Now let's blink to our last time period, 1777.
+005.993|The next enemy should be the Heavy; it's strongest of them all, but also the slowest. 
+002.996|Make sure they don't get past the gates.
+004.442|Let's see if you remember what to do without me instructing you.
+005.000|<trigger/> HeavySpawn-setActive-

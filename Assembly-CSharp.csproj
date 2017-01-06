@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_3_4;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_5_0;UNITY_5_5;UNITY_5;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VIDEO;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.XML" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
       <HintPath>L:/Developer_Tools/Unity 5/Editor/Data/Managed/UnityEngine.dll</HintPath>
@@ -123,6 +124,12 @@
      <Compile Include="Assets\GooglePlayGames\Platforms\Android\Gms\Common\Api\ResultCallbackProxy.cs" />
      <Compile Include="Assets\GooglePlayGames\Platforms\Android\Gms\Common\Api\Status.cs" />
      <Compile Include="Assets\GooglePlayGames\Platforms\Android\Gms\Common\ConnectionResult.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\Android\Gms\Games\Games.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\Android\Gms\Games\Stats\LoadPlayerStatsResultObject.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\Android\Gms\Games\Stats\PlayerStats.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\Android\Gms\Games\Stats\PlayerStatsObject.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\Android\Gms\Games\Stats\Stats.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\Android\Gms\Games\Stats\StatsObject.cs" />
      <Compile Include="Assets\GooglePlayGames\Platforms\IClientImpl.cs" />
      <Compile Include="Assets\GooglePlayGames\Platforms\IOS\IOSClient.cs" />
      <Compile Include="Assets\GooglePlayGames\Platforms\IOS\IOSTokenClient.cs" />
@@ -241,9 +248,6 @@
      <Compile Include="Assets\GooglePlayGames\Platforms\PlayGamesClientFactory.cs" />
      <Compile Include="Assets\GooglePlayGames\Platforms\TokenClient.cs" />
      <Compile Include="Assets\GooglePlayGames\PluginVersion.cs" />
-     <Compile Include="Assets\Scripts\Achievements\EnemAchv.cs" />
-     <Compile Include="Assets\Scripts\Achievements\GameCompAchv.cs" />
-     <Compile Include="Assets\Scripts\Achievements\TutorialAchv.cs" />
      <Compile Include="Assets\Scripts\Deprecated Scripts\Enemy\EnemyAttack.cs" />
      <Compile Include="Assets\Scripts\Deprecated Scripts\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Deprecated Scripts\Enemy\EnemyMovement.cs" />
@@ -255,32 +259,65 @@
      <Compile Include="Assets\Scripts\Deprecated Scripts\TrackingSystem.cs" />
      <Compile Include="Assets\Scripts\Gates\GateHealth.cs" />
      <Compile Include="Assets\Scripts\Generator\GenHealth.cs" />
-     <Compile Include="Assets\Scripts\LeaderboardUI.cs" />
+     <Compile Include="Assets\Scripts\Manager\DialogueManager.cs" />
      <Compile Include="Assets\Scripts\Manager\EnemyManager.cs" />
      <Compile Include="Assets\Scripts\Manager\EnemySPManager.cs" />
      <Compile Include="Assets\Scripts\Manager\NextSceneManager.cs" />
      <Compile Include="Assets\Scripts\Manager\QuitManager.cs" />
      <Compile Include="Assets\Scripts\Manager\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\Manager\VRFilterManager.cs" />
-     <Compile Include="Assets\Scripts\ScoreDisplay.cs" />
-     <Compile Include="Assets\Scripts\SocialConnect.cs" />
-     <Compile Include="Assets\Scripts\TrackingUI.cs" />
-     <Compile Include="Assets\Scripts\Tutorial.cs" />
-     <None Include="Assets\GooglePlayGames\Editor\Podfile.txt" />
+     <Compile Include="Assets\Scripts\PlayStoreGamesScripts\EnemAchv.cs" />
+     <Compile Include="Assets\Scripts\PlayStoreGamesScripts\GameCompAchv.cs" />
+     <Compile Include="Assets\Scripts\PlayStoreGamesScripts\LeaderboardUI.cs" />
+     <Compile Include="Assets\Scripts\PlayStoreGamesScripts\SocialConnect.cs" />
+     <Compile Include="Assets\Scripts\PlayStoreGamesScripts\TutorialAchv.cs" />
+     <Compile Include="Assets\Scripts\UI\CardboardToggle.cs" />
+     <Compile Include="Assets\Scripts\UI\PivotCamera.cs" />
+     <Compile Include="Assets\Scripts\UI\RadarUI.cs" />
+     <Compile Include="Assets\Scripts\UI\ScoreDisplay.cs" />
+     <Compile Include="Assets\Scripts\UI\TrackingUI.cs" />
+     <Compile Include="Assets\VoiceOverManager.cs" />
+     <None Include="Assets\Resources\Dialogues\Tutorial\tutorial.txt" />
      <None Include="Assets\Cardboard\Distortion\CardboardDistortion.cginc" />
+     <None Include="Assets\Resources\Dialogues\Tutorial\tutorial01.txt" />
      <None Include="Assets\Cardboard\Resources\UnlitTexture.shader" />
      <None Include="Assets\GooglePlayGames\Editor\template-GameInfo.txt" />
+     <None Include="Assets\Resources\Dialogues\Tutorial\tutorial02.txt" />
+     <None Include="Assets\Resources\Dialogues\Tutorial\tutorial_response.txt" />
      <None Include="Assets\GooglePlayGames\Editor\template-AndroidManifest.txt" />
+     <None Include="Assets\Resources\Dialogues\Tutorial\tutorial03.txt" />
+     <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver.txt" />
+     <None Include="Assets\Resources\Dialogues\Tutorial\tutorial04.txt" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\Plugins\Android\MainLibProj\AndroidManifest.xml" />
+     <None Include="Assets\Resources\Dialogues\Tutorial\tutorial-triggers.txt" />
      <None Include="Assets\GooglePlayGames\Editor\template-Constants.txt" />
      <None Include="Assets\Cardboard\Resources\UI\CardboardReticleShader.shader" />
      <None Include="Assets\Cardboard\Resources\SolidColor.shader" />
+     <None Include="Assets\Resources\Dialogues\Tutorial\tutorial00.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>L:/Developer_Tools/Unity 5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>L:/Developer_Tools/Unity 5/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.PlaymodeTestsRunner">
+ <HintPath>L:/Developer_Tools/Unity 5/Editor/Data/UnityExtensions/Unity/PlaymodeTestsRunner/UnityEngine.PlaymodeTestsRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>L:/Developer_Tools/Unity 5/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>L:/Developer_Tools/Unity 5/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VR">
+ <HintPath>L:/Developer_Tools/Unity 5/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>L:/Developer_Tools/Unity 5/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Common">
+ <HintPath>L:/Developer_Tools/Unity 5/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

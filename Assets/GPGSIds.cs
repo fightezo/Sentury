@@ -24,12 +24,11 @@
 
 public static class GPGSIds
 {
-        public const string achievement_one_hundred_billion_points = "CgkIoZ2o4r4OEAIQBg"; // <GPGSID>
+        public const string achievement_good_job_soldier = "CgkIoZ2o4r4OEAIQBA"; // <GPGSID>
         public const string achievement_man_down = "CgkIoZ2o4r4OEAIQAw"; // <GPGSID>
         public const string achievement_its_not_the_future_yet = "CgkIoZ2o4r4OEAIQAg"; // <GPGSID>
+        public const string achievement_now_you_know = "CgkIoZ2o4r4OEAIQCA"; // <GPGSID>
         public const string leaderboard_highscore_leaderboard = "CgkIoZ2o4r4OEAIQBw"; // <GPGSID>
-        public const string achievement_its_over_9000 = "CgkIoZ2o4r4OEAIQBA"; // <GPGSID>
-        public const string achievement_one_million_points = "CgkIoZ2o4r4OEAIQBQ"; // <GPGSID>
         public const string achievement_youre_not_too_heavy_for_me = "CgkIoZ2o4r4OEAIQAQ"; // <GPGSID>
 
 }

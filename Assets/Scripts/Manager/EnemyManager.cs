@@ -1,44 +1,38 @@
-﻿using UnityEngine;
+﻿/* EnemyManager
+ * Manager that controls enemy movement
+*/
+using UnityEngine;
 using System.Collections;
 
 public class EnemyManager : MonoBehaviour {
-	public int startingHealth = 100;         	 // The amount of health the enemy starts the game with.
 	public int currentHealth;                    // The current health the enemy has.
-	public int scoreValue = 10;               	// The amount added to the player's score when the enemy dies.
+	public int scoreValue;               		// The amount added to the player's score when the enemy dies.
 	public bool isTracked = false;				// Whether the enemy has been tracked by the Spotter
+	public float timeBetweenAttacks;
+	public int attackDamage;
+	private float timer;
 
-	public float timeBetweenAttacks = 0.5f;
-	public int attackDamage = 10;
-	public float timer;
 
 	private GameObject generator;
 	private GenHealth genHealth;
 	private GateHealth gateHealth;
 	private bool genTargetInRange;
 	private bool gateTargetInRange;
-
-
-
-	private bool isDead;                        // Whether the enemy is dead.
-	private NavMeshAgent nav;            // Reference to the nav mesh agent.
+	private UnityEngine.AI.NavMeshAgent nav;    // Reference to the nav mesh agent.
 	private int damage = 1;
 
 	// Use this for initialization
 	void Start () {
 		generator = GameObject.FindGameObjectWithTag ("Generator");
 		genHealth = generator.GetComponent <GenHealth>();
-		currentHealth = startingHealth;
-		nav = GetComponent<NavMeshAgent>();
+		nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
 	}
 
 	// Update is called once per frame
 	void Update () {
-		// If the enemy and the player have health left...
 		if(currentHealth > 0){
-			// ... set the destination of the nav mesh agent to the player.
 			nav.destination = generator.transform.position;
 		}else{
-			// ... disable the nav mesh agent.
 			nav.enabled = false;
 		};
 
@@ -53,18 +47,14 @@ public class EnemyManager : MonoBehaviour {
 		}
 
 		if(isTracked){
-			GetComponent<Renderer>().material.color = Color.blue;
+			this.gameObject.GetComponentInChildren<TextMesh>().text = "X";
 			currentHealth -= damage;
 			if(currentHealth <= 0){
-				isDead = true;
+				EnemySPManager.count -= 1;
+				ScoreManager.score += scoreValue;
+				VRFilterManager.enemList.Remove(this.gameObject);
+				Destroy (gameObject);
 			}
-		}
-
-		if(isDead){
-			EnemySPManager.count -= 1;
-			ScoreManager.score += scoreValue;
-			VRFilterManager.enemList.Remove(this.gameObject);
-			Destroy (gameObject);
 		}
 	}
 

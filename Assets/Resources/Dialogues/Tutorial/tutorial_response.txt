@@ -1,0 +1,72 @@
+003.000|Welcome rookie, must be your first day here.
+000.000|<break/>
+000.000|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=... [instruction text]
+005.000|Not much of a talker huh? fine by me, no {bullshit} interruptions.
+005.000|We're gonna go through the basics today, do you understand me soldier?
+000.000|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=... [instruction text]
+004.000|Nod if you understand soldier
+000.000|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=input queue from player; no nod-- [instruction text]
+005.000|C'mon now, we dont have all day!
+004.000|I wont start until I get an affirmation from you.
+005.000|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=input queue from player; nod-- [instruction text]
+005.000|Love your enthusiasm! **sarcasticly
+005.000|Alright... You're a spotter for the snipers on our walls.
+004.000|Your job is to prevent the enemies from breaking through our gates and taking over this base and losing our battle in this war
+003.000|So... No pressure.
+005.000|Find the enemy
+008.000|Identify the enemy
+007.000|Blink between eras
+001.000|Repeat and....
+002.000|Survive!
+005.000|F.I.B.R.(S) for short.
+005.000|You know what they say about getting our daily dose of fibers
+005.000|Hahaha
+005.000|Did you understand the acronym soldier?
+004.000|Hmm.... 
+005.000|Oh just in time, look. There's a enemy right there.
+005.000|Let's put what you learned into good use, shall we?
+002.000|Remember.
+002.000|F.I.B.R.S.
+005.000|FIND the enemy
+005.000|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=allow player to find it; or within camera view [instruction text] HeavySpawn - setActive-
+004.000|We call that one the --- cause it looks like a ---, hahaha
+005.000|Next, IDENTIFY the enemy by looking at the enemy until it's marked.
+005.000|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=wait for player to mark it [instruction text]
+005.000|Great! you are done with that enemy, let the snipers take care of the rest.
+005.000|Now... Do you remember what the next step is?
+005.000|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=if player nods within time limit (3sec); [instruction text]
+005.000|THAT'S RIGHT! BLINK! We've got ourselves a fast learner here. Great!
+005.000|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=else [instruction text]
+005.000|Its BLINK you idiot; Let's hope you don't forget, cause our lives depend on it.
+005.000|Go on now... BLINK to the other eras with the trigger on the device you're wearing
+005.000|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=wait for the input; trigger [instruction text]
+005.000|Piss on a bucket! This is one future I'd like to avoid!
+006.000|What's with the confused look on your face?
+004.000|Didn't you know? the device you're wearing allows you to blink between significant time periods?
+005.000|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=nods [instruction text]
+005.000|I guess you're just shocked about how different the past was huh.
+005.000|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=no nod [instruction text]
+004.000|Alright.. This idiot knows nothing!
+003.000|How the hell did you pass the test?
+005.000|Who recruited you?!
+005.000|Im gonna have to have word with HR after this training session...
+005.000|Anyway... You're in 2017 AD.
+005.000|Long story short, It's where it all started.
+005.000|Anyways, there's another enemy there go mark it.
+004.000|Remember, F.I.B.R.S.
+005.000|Oh, in case you haven't noticed yet, you can also use the radar to find.
+004.000|That might come in handy in case of emergency.
+004.000|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=allow player to find it; or within camera view [instruction text]
+005.000|Now we call this one the --- cause it looks like a ---
+006.000|hahaha
+005.000|Hurry up, IDENTIFY the enemy by looking at the enemy until it's marked.
+004.000|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=wait for player to mark it [instruction text]
+003.000|Simple isnt it?
+004.000|Now blink to our last time period; 1777AD
+006.000|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=wait for player to blink [instruction text]
+005.000|Let's see if you remember without what to do without me instructing you
+001.000|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=wait for player find, identify and death of enemy [instruction text]
+006.000|Good job son! Seems like you're a natural!
+005.000|You're already doing better than our previous Sentur spotter.
+004.000|Training's over; it's time to do your faction proud son.
+004.000|Good luck out there, you'll need it.

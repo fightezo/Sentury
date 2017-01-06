@@ -378,6 +378,30 @@ namespace GooglePlayGames
         {
             Authenticate(callback, false);
         }
+		public void Authenticate(Action<bool,string> callback)
+		{
+			Authenticate(callback, false, "auth error");
+		}
+
+		public void Authenticate(Action<bool,string> callback, bool silent, string message)
+		{
+			// make a platform-specific Play Games client
+			if (mClient == null)
+			{
+				GooglePlayGames.OurUtils.Logger.d(
+					"Creating platform-specific Play Games client.");
+				mClient = PlayGamesClientFactory.GetPlatformPlayGamesClient(mConfiguration);
+			}
+
+			// authenticate!
+			Action<bool> c = (bool a) => callback(a, message);
+			mClient.Authenticate(c, silent);
+		}
+
+		public void Authenticate(ILocalUser unused, Action<bool,string> callback)
+		{
+			Authenticate(callback, false, "auth error");
+		}
 
         /// <summary>
         /// Determines whether the user is authenticated.
@@ -415,6 +439,8 @@ namespace GooglePlayGames
                 GooglePlayGames.OurUtils.Logger.e(
                     "GetUserId() can only be called after authentication.");
                 callback(new IUserProfile[0]);
+
+                return;
             }
 
             mClient.LoadUsers(userIds, callback);
@@ -715,7 +741,7 @@ namespace GooglePlayGames
                         " is less than or equal to 1. You might be trying to use values in the range of [0,1], while values are expected to be within the range [0,100]. If you are using the latter, you can safely ignore this message.");
                 }
 
-                int targetSteps = (int)((progress / 100) * totalSteps);
+                int targetSteps = (int) Math.Round((progress / 100f) * totalSteps);
                 int numSteps = targetSteps - curSteps;
                 GooglePlayGames.OurUtils.Logger.d("Target steps: " +
                     targetSteps + ", cur steps:" + curSteps);
@@ -829,7 +855,11 @@ namespace GooglePlayGames
             {
                 GooglePlayGames.OurUtils.Logger.e(
                     "LoadAchievementDescriptions can only be called after authentication.");
-                callback.Invoke(null);
+                if (callback != null)
+                {
+                    callback.Invoke(null);
+                }
+                return;
             }
 
             mClient.LoadAchievements(ach =>
@@ -854,6 +884,8 @@ namespace GooglePlayGames
             {
                 GooglePlayGames.OurUtils.Logger.e("LoadAchievements can only be called after authentication.");
                 callback.Invoke(null);
+
+                return;
             }
 
             mClient.LoadAchievements(ach =>
@@ -1120,7 +1152,10 @@ namespace GooglePlayGames
             if (!IsAuthenticated())
             {
                 GooglePlayGames.OurUtils.Logger.e("ShowLeaderboardUI can only be called after authentication.");
-                callback(UIStatus.NotAuthorized);
+                if (callback != null)
+                {
+                    callback(UIStatus.NotAuthorized);
+                }
                 return;
             }
 
@@ -1169,6 +1204,8 @@ namespace GooglePlayGames
                 {
                     callback(false);
                 }
+
+                return;
             }
 
             mClient.LoadFriends(callback);
@@ -1190,6 +1227,8 @@ namespace GooglePlayGames
                 {
                     callback(false);
                 }
+
+                return;
             }
 
             LeaderboardTimeSpan timeSpan;

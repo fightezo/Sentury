@@ -195,6 +195,10 @@ namespace GooglePlayGames.Native
                         {
                             builder.RequireGooglePlus();
                         }
+                        string[] scopes = mConfiguration.Scopes;
+                        for (int i = 0; i < scopes.Length; i++) {
+                            builder.AddOauthScope(scopes[i]);
+                        }
                         Debug.Log("Building GPG services, implicitly attempts silent auth");
                         mAuthState = AuthState.SilentPending;
                         mServices = builder.Build(config);
@@ -609,18 +613,23 @@ namespace GooglePlayGames.Native
                                 mAuthState = AuthState.Unauthenticated;
                                 var silentCallbacks = mSilentAuthCallbacks;
                                 mSilentAuthCallbacks = null;
-                                Debug.Log("Invoking callbacks, AuthState changed from silentPending to Unauthenticated.");
+                                GooglePlayGames.OurUtils.Logger.d(
+                                    "Invoking callbacks, AuthState changed " +
+                                    "from silentPending to Unauthenticated.");
 
                                 InvokeCallbackOnGameThread(silentCallbacks, false);
                                 if (mPendingAuthCallbacks != null)
                                 {
-                                    Debug.Log("there are pending auth callbacks - starting AuthUI");
+                                    GooglePlayGames.OurUtils.Logger.d(
+                                        "there are pending auth callbacks - starting AuthUI");
                                     GameServices().StartAuthorizationUI();
                                 }
                             }
                             else
                             {
-                                Debug.Log("AuthState == " + mAuthState + " calling auth callbacks with failure");
+                                GooglePlayGames.OurUtils.Logger.d(
+                                        "AuthState == " + mAuthState +
+                                          " calling auth callbacks with failure");
 
                                 // make sure we are not paused
                                 UnpauseUnityPlayer();
@@ -719,6 +728,12 @@ namespace GooglePlayGames.Native
         /// <seealso cref="GooglePlayGames.BasicApi.IPlayGamesClient.GetPlayerStats"/>
         public void GetPlayerStats(Action<CommonStatusCodes, PlayerStats> callback)
         {
+#if UNITY_ANDROID
+            // Temporary fix to get SpendProbability until the
+            // C++ SDK supports it.
+            PlayGamesHelperObject.RunOnGameThread(() =>
+                clientImpl.GetPlayerStats(GetApiClient(), callback));
+#else
             mServices.StatsManager().FetchForPlayer((playerStatsResponse) => {
                 // Translate native errors into CommonStatusCodes.
                 CommonStatusCodes responseCode =
@@ -749,6 +764,7 @@ namespace GooglePlayGames.Native
                     }
                 }
             });
+#endif
         }
 
         ///<summary></summary>

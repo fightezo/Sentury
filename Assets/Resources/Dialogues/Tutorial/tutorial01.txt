@@ -1,0 +1,8 @@
+004.722|Great! You did it. Now let the snipers take care of the rest.
+002.659|Do you remember what the next step is?
+001.899|<break/>
+001.456|It's BLINK!
+003.545|Let's hope you don't forget! Cause our lives depend on it.
+001.751|Go on now... 
+004.529|BLINK to the other era using the trigger on the device you're wearing.
+000.000|<trigger/> WorldManager-setActive-

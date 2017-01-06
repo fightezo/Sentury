@@ -20,7 +20,7 @@ public class NextSceneManager: MonoBehaviour {
 			delay = Time.time + 2.0f;
 		}
 		//play game
-		if((isLookedAt== true && Cardboard.SDK.Triggered == true)||(isLookedAt == true && Time.time>delay)){
+		if((isLookedAt == true && Cardboard.SDK.Triggered == true)||(isLookedAt == true && Time.time>delay)){
 			SceneManager.LoadScene(nextScene.name);
 		}
 	}

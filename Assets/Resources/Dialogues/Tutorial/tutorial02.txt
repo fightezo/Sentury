@@ -1,0 +1,16 @@
+000.000|<trigger/> WorldManager-setActive.false-
+003.764|Ah... I'll never grow tired of looking at this era.
+003.714|What's with the confused look on your face soldier?
+004.220|Didn't you know the device you're wearing allows you to blink between time periods?
+002.638|How did you even pass the basics?
+001.519|Who recruited you?!
+004.516|Im gonna have to have word with HR after this training session...
+005.740|Anyway You're in 2017. Long story short, This is where it all started.
+003.250|There's another enemy there, find it and mark it.
+002.321|Remember, F.I.B.R.S.
+006.035|Oh, in case you haven't noticed yet, you can also use the radar to find them.
+003.017|That might come in handy in case of emergency.
+000.000|<trigger/> DroneSpawn-setActive-
+006.584|We call this one the Drone; it's weaker than the Infantry units, but it's also much faster. 
+001.709|Keep an eye out for them.
+006.353|Hurry up now, IDENTIFY the enemy by looking at it until it's marked.

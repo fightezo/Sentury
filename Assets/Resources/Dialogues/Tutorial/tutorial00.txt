@@ -1,0 +1,24 @@
+003.537|Welcome rookie, must be your first day here.
+003.683|Today we're gonna go through the basics, do you understand soldier?
+002.285|<break/>
+004.203|A silent one huh? Alright Let's see what you're made of.
+003.261|You're a spotter for the snipers on our walls.
+006.941|Your job is to prevent the enemies from breaking through our gates, destroying the generator and taking over our base.
+002.947|So... No pressure.
+002.110|Here's what you'll have to do...
+001.378|Find the enemy
+001.692|Identify the enemy
+001.901|Blink between eras
+001.273|Repeat
+000.907|and...
+001.378|Survive!
+003.907|F.I.B.R.S. for short. Funny how that worked out nicely.
+002.127|<break/>
+000.000|<trigger/> InfantrySpawn-setActive-
+003.627|Just in time. There's a enemy right there.
+002.738|Let's put what you learned into good use, shall we?
+001.134|Remember.
+001.081|F.I.B.R.S.
+001.814|FIND the enemy
+005.389|We call that one the Infantry, it's the most common enemy you'll meet.
+005.159|Now, IDENTIFY the enemy by looking at it until it's marked.

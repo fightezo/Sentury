@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿/*Score Manager
+ * Display score in player's hud
+*/
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
